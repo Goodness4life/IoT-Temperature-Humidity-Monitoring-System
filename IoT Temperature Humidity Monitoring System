@@ -1,0 +1,38 @@
+#define BLYNK_TEMPLATE_ID "TMPL2FIlEHUOI"
+#define BLYNK_TEMPLATE_NAME "ESP8266LEDCONTROL"
+#define BLYNK_AUTH_TOKEN "o2yV1mKshIOTv6Qb1qeAD3VeObsW5w8W"
+
+#include <ESP8266WiFi.h>
+#include <BlynkSimpleEsp8266.h>
+
+char ssid[] = "DESKTOP_PD0VGQ8_6269";
+char pass[] = "08160573615aaa";
+
+int ledPin = D4;   // GPIO2 on NodeMCU
+int ledPin2 = D3;
+
+BLYNK_WRITE(V0)
+{
+  int state = param.asInt();
+  digitalWrite(ledPin, state);
+}
+
+BLYNK_WRITE(V2)
+{
+  int state = param.asInt();
+  digitalWrite(ledPin2, state);
+}
+
+void setup()
+{
+  Serial.begin(115200);
+  pinMode(ledPin, OUTPUT);
+  pinMode(ledPin2, OUTPUT);
+
+  Blynk.begin(BLYNK_AUTH_TOKEN, ssid, pass);
+}
+
+void loop()
+{
+  Blynk.run();
+}
