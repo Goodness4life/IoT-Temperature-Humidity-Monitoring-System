@@ -1,12 +1,12 @@
-#define BLYNK_TEMPLATE_ID "TMPL2FIlEHUOI"
-#define BLYNK_TEMPLATE_NAME "ESP8266LEDCONTROL"
-#define BLYNK_AUTH_TOKEN "o2yV1mKshIOTv6Qb1qeAD3VeObsW5w8W"
+#define BLYNK_TEMPLATE_ID "YOUR_TEMPLATE_ID"
+#define BLYNK_TEMPLATE_NAME "YOUR_TEMOLATE_NAME"
+#define BLYNK_AUTH_TOKEN "YOUR_BLYNK_TOKEN"
 
 #include <ESP8266WiFi.h>
 #include <BlynkSimpleEsp8266.h>
 
-char ssid[] = "DESKTOP_PD0VGQ8_6269";
-char pass[] = "08160573615aaa";
+char ssid[] = "YOUR_WIFI_NAME";
+char pass[] = "YOUR_WIFI_PASSWORD";
 
 int ledPin = D4;   // GPIO2 on NodeMCU
 int ledPin2 = D3;
